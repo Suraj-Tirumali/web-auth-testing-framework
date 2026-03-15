@@ -72,7 +72,7 @@ def playwright_login(url, username, password):
         "button:has-text('Log in')",
         "button:has-text('Sign In')",
         "button:has-text('Continue')",
-        
+        "input[type='submit']"
     ]
 
     username_field = None
