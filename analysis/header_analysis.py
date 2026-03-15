@@ -50,7 +50,7 @@ def analyze_headers(headers):
 
         # Detect Bearer tokens using regex pattern
         if BEARER_PATTERN.search(value):
-            if value not in report["bearer_tokens"]:
+            if value in report["bearer_tokens"]:
                 report["bearer_tokens"].append(value)
 
     return report
