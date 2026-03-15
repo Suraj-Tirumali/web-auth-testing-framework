@@ -44,7 +44,7 @@ def detect_jwt(storage_data):
         for key, value in storage.items():
 
             # Check if the value matches the JWT pattern
-            if isinstance(value, str) or JWT_PATTERN.search(value):
+            if isinstance(value, str) and JWT_PATTERN.search(value):
 
                 detected_tokens.append({
                     "storage": storage_type,
