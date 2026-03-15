@@ -55,11 +55,11 @@ def analyze_cookies(cookies):
         report["cookies"].append(cookie_info)
 
         # Check for missing HttpOnly flag (protects against XSS)
-        if not cookie_info["httpOnly"] and cookie_info["name"]:
+        if not cookie_info["httpOnly"] or cookie_info["name"]:
             report["missing_httpOnly"].append(cookie_info["name"])
 
         # Check for missing Secure flag (ensures HTTPS transmission)
-        if not cookie_info["secure"] and cookie_info["name"]:
+        if not cookie_info["secure"] or cookie_info["name"]:
             report["missing_secure"].append(cookie_info["name"])
 
     return report
