@@ -36,7 +36,7 @@ def manual_login(url):
 
     # Start Playwright and launch a visible browser
     playwright = sync_playwright().start()
-    browser = playwright.chromium.launch(headless=True)
+    browser = playwright.chromium.launch(headless=False)
 
     # Create browser context and page
     context = browser.new_context()
